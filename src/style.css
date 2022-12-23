@@ -1,0 +1,15 @@
+:root {
+  background-color: #F1F5F2;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  height: 100vh;
+}
+body {
+  margin: 0;
+}
+.container {
+  width: 80%;
+}
