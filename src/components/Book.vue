@@ -15,9 +15,10 @@ getData()
 
 <template>
   <div v-for="item in listItems" :key="item.id">
+    <img :src="item.image" alt="">
     {{item.title}}
     {{item.author}}
-    <img :src="item.image" alt="">
+    {{ item.isbn }}
   </div>
 </template>
 
