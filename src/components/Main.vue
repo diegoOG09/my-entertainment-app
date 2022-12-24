@@ -10,19 +10,33 @@ const props = defineProps({
 
 <template>
   <main id="main">
-    <span v-if="category === 'Libros'"><i class="fa-solid fa-book"></i></span>
-    <span v-if="category === 'Peliculas'"
-      ><i class="fa-solid fa-film"></i
-    ></span>
-    <span v-if="category === 'Series'"><i class="fa-solid fa-film"></i></span>
-    <h2>{{ category }}</h2>
-    <p></p>
+    <div class="container">
+      <div class="subtitle">
+        <span class="icon books" v-if="category === 'Libros'"><i class="fa-solid fa-book"></i></span>
+        <span class="icon movies" v-if="category === 'Películas'"><i class="fa-solid fa-film"></i></span>
+        <span class="icon series" v-if="category === 'Series'"><i class="fa-solid fa-film"></i></span>
+        <h2>{{ category }}</h2>
+      </div>
+
+      <!-- AQUI SE TRAE LA INFORMACION -->
+    </div>
   </main>
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/variables";
 main {
+  padding-top: 4rem;
   height: 100vh;
+  .subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: $white-text;
+    font-family: $normal;
+  }
+
 }
 </style>

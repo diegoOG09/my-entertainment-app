@@ -57,6 +57,8 @@ function showShows() {
     </p>
   </header>
 
+  <hr>
+
   <Main :category="category" />
 </template>
 
@@ -101,5 +103,13 @@ function showShows() {
     margin-bottom: 1.5rem;
     margin-top: 1.2rem;
   }
+}
+hr {
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 40%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(66, 82, 105, 1), rgb(209, 209, 209), rgba(66, 82, 105, 1));
 }
 </style>
