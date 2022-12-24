@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import Book from "./Book.vue";
+import Movie from "./Movie.vue";
 import Header from "./Header.vue";
 
 const props = defineProps({
@@ -19,6 +20,7 @@ const props = defineProps({
       </div>
 
       <!-- AQUI SE TRAE LA INFORMACION -->
+      <Book />
     </div>
   </main>
 </template>

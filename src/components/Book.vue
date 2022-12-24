@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import axios from "axios";
 
 const listItems = ref([])
 
@@ -16,8 +15,8 @@ getData()
 <template>
   <div v-for="item in listItems" :key="item.id">
     <img :src="item.image" alt="">
-    {{item.title}}
-    {{item.author}}
+    {{ item.title }}
+    {{ item.author }}
     {{ item.isbn }}
   </div>
 </template>
