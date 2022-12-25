@@ -1,10 +1,10 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref } from "vue"
 
 const listItems = ref([])
 
 async function getData() {
-  const res = await fetch('http://localhost:4567/api/v1/books')
+  const res = await fetch('http://localhost:4567/api/v1/shows')
   const finalRes = await res.json()
   listItems.value = finalRes
   console.log(finalRes)
@@ -18,8 +18,8 @@ getData()
       <img :src="item.image" alt="">
       <div class="card-item_info">
         <h3>{{ item.title }}</h3>
-        <h4>{{ item.author }}</h4>
-        <span>{{ item.isbn }}</span>
+        <h4>{{ item.director }}</h4>
+        <span>{{ item.rating }}</span>
       </div>
     </div>
   </div>

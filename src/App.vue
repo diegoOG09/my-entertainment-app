@@ -13,7 +13,10 @@
   width: 70%;
   margin: 0 auto;
 }
-h2 {
+h2,h3,h4 {
+  margin: 0;
+}
+span {
   margin: 0;
 }
 p {

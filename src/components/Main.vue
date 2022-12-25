@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from "vue";
 import Book from "./Book.vue";
 import Movie from "./Movie.vue";
+import Show from "./Show.vue";
 import Header from "./Header.vue";
 
 const props = defineProps({
@@ -14,13 +15,15 @@ const props = defineProps({
     <div class="container">
       <div class="subtitle">
         <span class="icon books" v-if="category === 'Libros'"><i class="fa-solid fa-book"></i></span>
-        <span class="icon movies" v-if="category === 'Películas'"><i class="fa-solid fa-film"></i></span>
+        <span class="icon movies" v-if="category === 'Peliculas'"><i class="fa-solid fa-film"></i></span>
         <span class="icon series" v-if="category === 'Series'"><i class="fa-solid fa-film"></i></span>
         <h2>{{ category }}</h2>
       </div>
 
       <!-- AQUI SE TRAE LA INFORMACION -->
-      <Book />
+      <Book v-if="category === 'Libros'" />
+      <Movie v-if="category === 'Peliculas'"/>
+      <Show v-if="category === 'Series'" />
     </div>
   </main>
 </template>
@@ -38,6 +41,7 @@ main {
     gap: 1rem;
     color: $white-text;
     font-family: $normal;
+    margin-bottom: 3rem;
   }
 
 }
