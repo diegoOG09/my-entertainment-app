@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from "vue";
 import Main from "./Main.vue";
+import Footer from "./Footer.vue"
 
 const props = defineProps({
   msg: String,

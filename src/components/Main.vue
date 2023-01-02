@@ -33,6 +33,7 @@ const props = defineProps({
 main {
   padding-top: 4rem;
   height: 100vh;
+  margin-bottom: 2rem;
   .subtitle {
     display: flex;
     flex-direction: column;
