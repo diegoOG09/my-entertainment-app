@@ -7,40 +7,10 @@ const props = defineProps({
   msg: String,
 });
 
-const titlePage = ref(null)
-const showB = ref(false)
-const showM = ref(false)
-const showS = ref(false)
-let category = "";
-
-function showBooks() {
-  showB.value = true
-  showM.value = false
-  showS.value = false
-  titlePage.value.style.display = "none"
-  category = "Libros"
-}
-
-function showMovies() {
-  showM.value = true
-  showB.value = false
-  showS.value = false
-  titlePage.value.style.display = "none"
-  category = "Peliculas"
-}
-
-function showShows() {
-  showS.value = true
-  showB.value = false
-  showM.value = false
-  titlePage.value.style.display = "none"
-  category = "Series"
-}
 </script>
 
 <template>
   <header id="header">
-
     <div id="container">
       <div class="steam" id="steam1"> </div>
       <div class="steam" id="steam2"> </div>
@@ -71,22 +41,18 @@ function showShows() {
         </div>
         <div id="cup-handle"></div>
       </div>
-
       <div id="saucer"></div>
-
       <div id="shadow"></div>
     </div>
 
     <div class="nav">
       <nav id="nav">
-        <a ref="books" @click="showBooks" href="#">Libros</a>
-        <a ref="movies" @click="showMovies" href="#">Peliculas</a>
-        <a ref="shows" @click="showShows" href="#">Series</a>
+        <i class="fa-solid fa-house-user"></i>
+        <RouterLink ref="books" to="/books">Libros</RouterLink>
+        <RouterLink ref="movies" to="/movies">Peliculas</RouterLink>
+        <RouterLink ref="shows" to="/shows">Series</RouterLink>
       </nav>
     </div>
-    <h1 v-if="showB === true">Libros</h1>
-    <h1 v-if="showM === true">Peliculas</h1>
-    <h1 v-if="showS === true">Series</h1>
 
     <h1 ref="titlePage">{{ msg }}</h1>
     <p>
@@ -97,7 +63,7 @@ function showShows() {
 
   <hr>
 
-  <Main :category="category" />
+  <Main />
 </template>
 
 <style lang="scss" scoped>
@@ -141,6 +107,10 @@ function showShows() {
     margin-bottom: 1.5rem;
     margin-top: 1.2rem;
   }
+}
+
+.main {
+  padding-top: 4rem;
 }
 hr {
   margin: 0 auto;

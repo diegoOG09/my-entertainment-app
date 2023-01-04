@@ -19,12 +19,8 @@ const props = defineProps({
         <span class="icon series" v-if="category === 'Series'"><i class="fa-solid fa-film"></i></span>
         <h2>{{ category }}</h2>
       </div>
-
-      <!-- AQUI SE TRAE LA INFORMACION -->
-      <Book v-if="category === 'Libros'" />
-      <Movie v-if="category === 'Peliculas'"/>
-      <Show v-if="category === 'Series'" />
     </div>
+    <RouterView class="container main" />
   </main>
 </template>
 
@@ -44,6 +40,5 @@ main {
     font-family: $normal;
     margin-bottom: 3rem;
   }
-
 }
 </style>
