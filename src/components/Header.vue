@@ -47,7 +47,8 @@ const props = defineProps({
 
     <div class="nav">
       <nav id="nav">
-        <i class="fa-solid fa-house-user"></i>
+        
+        <RouterLink ref="home" to="/"><i class="fa-solid fa-house-user"></i></RouterLink>
         <RouterLink ref="books" to="/books">Libros</RouterLink>
         <RouterLink ref="movies" to="/movies">Peliculas</RouterLink>
         <RouterLink ref="shows" to="/shows">Series</RouterLink>
@@ -57,7 +58,7 @@ const props = defineProps({
     <h1 ref="titlePage">{{ msg }}</h1>
     <p>
       Una app en la que guardo mis libros, películas y series favoritas al mismo
-      tiempo que aprendo Vue 🟢 😄
+      tiempo que aprendo Vue 
     </p>
   </header>
 
@@ -81,6 +82,12 @@ const props = defineProps({
       display: flex;
       flex-direction: row;
       gap: 2rem;
+      span {
+        i{
+          color: $white-text;
+          font-size: 1.2rem;
+        }
+      }
       a {
         text-decoration: none;
         color: $white-text;

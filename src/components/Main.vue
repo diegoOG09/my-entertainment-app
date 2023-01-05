@@ -4,6 +4,7 @@ import Book from "./Book.vue";
 import Movie from "./Movie.vue";
 import Show from "./Show.vue";
 import Header from "./Header.vue";
+import Footer from './Footer.vue';
 
 const props = defineProps({
   category: String,
@@ -22,13 +23,14 @@ const props = defineProps({
     </div>
     <RouterView class="container main" />
   </main>
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
 @import "../styles/variables";
 main {
   padding-top: 4rem;
-  height: 100vh;
+  height: auto;
   margin-bottom: 2rem;
   .subtitle {
     display: flex;
